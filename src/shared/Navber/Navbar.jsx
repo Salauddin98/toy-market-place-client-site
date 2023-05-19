@@ -1,12 +1,21 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 // import "react-tooltip/dist/react-tooltip.css";
 // import { Tooltip as ReactTooltip } from "react-tooltip";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProviders";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const { user, logOut } = useContext(AuthContext);
+  // console.log(user);
+  const handleLogout = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   return (
     <header className="bg-slate-200">
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
@@ -53,26 +62,34 @@ const Navbar = () => {
                 All Toys
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="/blog"
-                aria-label="  My Toys"
-                title="  My Toys"
-                className={({ isActive }) => (isActive ? "active" : "default")}
-              >
-                My Toys
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/blog"
-                aria-label=" Add Toys"
-                title=" Add Toys"
-                className={({ isActive }) => (isActive ? "active" : "default")}
-              >
-                Add Toys
-              </NavLink>
-            </li>
+            {user && (
+              <>
+                <li>
+                  <NavLink
+                    to="/blog"
+                    aria-label="  My Toys"
+                    title="  My Toys"
+                    className={({ isActive }) =>
+                      isActive ? "active" : "default"
+                    }
+                  >
+                    My Toys
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/blog"
+                    aria-label=" Add Toys"
+                    title=" Add Toys"
+                    className={({ isActive }) =>
+                      isActive ? "active" : "default"
+                    }
+                  >
+                    Add Toys
+                  </NavLink>
+                </li>
+              </>
+            )}
             <li>
               <NavLink
                 to="/blog"
@@ -86,15 +103,30 @@ const Navbar = () => {
           </ul>
 
           <div className="items-center hidden space-x-8 lg:flex text-lg font-bold">
-            <Link to="/login">
-              {" "}
-              <button className="btn btn-outline btn-secondary">Login</button>
-            </Link>
-
-            <Link to="/register">
-              {" "}
-              <button className="btn btn-outline btn-primary">Signup</button>
-            </Link>
+            {user ? (
+              <button
+                onClick={handleLogout}
+                className="btn btn-outline btn-error"
+              >
+                Logout
+              </button>
+            ) : (
+              <>
+                {" "}
+                <Link to="/login">
+                  {" "}
+                  <button className="btn btn-outline btn-secondary">
+                    Login
+                  </button>
+                </Link>
+                <Link to="/register">
+                  {" "}
+                  <button className="btn btn-outline btn-primary">
+                    Signup
+                  </button>
+                </Link>
+              </>
+            )}
           </div>
 
           <div className="lg:hidden">

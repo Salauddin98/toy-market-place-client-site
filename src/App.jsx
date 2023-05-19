@@ -6,7 +6,7 @@ const App = () => {
   return (
     <>
       <Navbar></Navbar>
-      <div className="min-h-[calc(100vh-481px)]">
+      <div className="min-h-[calc(100vh-485px)]">
         <Outlet></Outlet>
       </div>
       <Footer></Footer>
