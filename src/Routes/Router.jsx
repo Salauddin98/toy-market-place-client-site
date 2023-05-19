@@ -15,9 +15,13 @@ const router = createBrowserRouter([
     element: <App></App>,
     children: [
       { path: "/", element: <Home></Home> },
-      { path: "/AllToys", element: <AllToys></AllToys> },
       {
-        path: "/MyToys",
+        path: "/AllToys",
+        element: <AllToys></AllToys>,
+        loader: () => fetch("http://localhost:5000/allToys"),
+      },
+      {
+        path: "/myToys",
         element: (
           <PrivateRoutes>
             <MyToys></MyToys>

@@ -66,7 +66,7 @@ const Navbar = () => {
               <>
                 <li>
                   <NavLink
-                    to="/MyToys"
+                    to="/myToys"
                     aria-label="  My Toys"
                     title="  My Toys"
                     className={({ isActive }) =>
@@ -270,48 +270,7 @@ const Navbar = () => {
                           Blog
                         </NavLink>
                       </li>
-                      {/* <li>
-                        {user && (
-                          <img
-                            id="img"
-                            alt=""
-                            className="w-12 h-12 border rounded-full dark:bg-gray-500 dark:border-gray-700"
-                            src={user.photoURL}
-                          />
-                        )}
-                        {user && (
-                          <ReactTooltip
-                            anchorId="img"
-                            place="top"
-                            variant="info"
-                            className="-mt-2"
-                            content={user.displayName}
-                          />
-                        )}
-                      </li> */}
-                      {/* <li>
-                        {user ? (
-                          <button
-                            onClick={handleLogout}
-                            className="btn btn-outline btn-error"
-                          >
-                            Logout
-                          </button>
-                        ) : (
-                          <>
-                            <Link to="/login">
-                              <button className="btn btn-outline mr-3">
-                                LogIn
-                              </button>
-                            </Link>
-                            <Link to="/register">
-                              <button className="btn btn-outline">
-                                SignUp
-                              </button>
-                            </Link>
-                          </>
-                        )}
-                      </li> */}
+
                       <li>
                         <div className="items-center  space-x-8 lg:flex text-lg font-bold">
                           <button className="btn btn-outline btn-secondary">

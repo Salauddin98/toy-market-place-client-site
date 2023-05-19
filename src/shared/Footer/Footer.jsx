@@ -3,7 +3,7 @@ import { FaAddressCard, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer className="px-4 divide-y dark:bg-gray-800 dark:text-gray-100 bg-black">
-      <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
+      <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-10 lg:px-8 flex flex-col justify-between space-y-8 lg:flex-row lg:space-y-0">
         <div className="lg:w-1/3 ">
           <div>
             <a
@@ -25,16 +25,16 @@ const Footer = () => {
           </div>
           <div className="space-y-3 mt-3">
             <span className="flex gap-3 items-center text-lg text-gray-400">
-              <FaAddressCard className="text-2xl "></FaAddressCard>
-              <p>Address: Dhaka,Bangladesh</p>
+              <FaAddressCard className="text-xl "></FaAddressCard>
+              <p>Dhaka,Bangladesh</p>
             </span>
             <span className="flex gap-3 items-center text-lg text-gray-400">
-              <FaEnvelope className="text-2xl "></FaEnvelope>
-              <p>Email: smd459974@gmail.com</p>
+              <FaEnvelope className="text-xl "></FaEnvelope>
+              <p>smd459974@gmail.com</p>
             </span>
             <span className="flex gap-3 items-center text-lg text-gray-400">
-              <FaPhoneAlt className="text-2xl "></FaPhoneAlt>
-              <p>Phone: +880 18748 14116</p>
+              <FaPhoneAlt className="text-xl "></FaPhoneAlt>
+              <p>+880 18748 14116</p>
             </span>
           </div>
         </div>

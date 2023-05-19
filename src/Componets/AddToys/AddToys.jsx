@@ -1,10 +1,24 @@
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { AuthContext } from "../../Providers/AuthProviders";
+import { toast } from "react-hot-toast";
 
 const AddToys = () => {
   const { register, handleSubmit } = useForm();
+  const { user } = useContext(AuthContext);
 
   const onSubmit = (data) => {
     console.log(data);
+    fetch("http://localhost:5000/addToys", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        toast.success("Toys Added Successfully");
+      });
   };
 
   return (
@@ -60,6 +74,7 @@ const AddToys = () => {
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="seller-name"
                 type="text"
+                defaultValue={user?.displayName}
                 placeholder="Enter seller name"
                 {...register("sellerName", { required: true })}
               />
@@ -75,6 +90,7 @@ const AddToys = () => {
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="seller-email"
                 type="email"
+                defaultValue={user?.email}
                 placeholder="Enter seller email"
                 {...register("sellerEmail", { required: true })}
               />
