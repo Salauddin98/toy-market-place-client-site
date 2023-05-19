@@ -86,8 +86,15 @@ const Navbar = () => {
           </ul>
 
           <div className="items-center hidden space-x-8 lg:flex text-lg font-bold">
-            <button className="btn btn-outline btn-secondary">Login</button>
-            <button className="btn btn-outline btn-primary">Signup</button>
+            <Link to="/login">
+              {" "}
+              <button className="btn btn-outline btn-secondary">Login</button>
+            </Link>
+
+            <Link to="/register">
+              {" "}
+              <button className="btn btn-outline btn-primary">Signup</button>
+            </Link>
           </div>
 
           <div className="lg:hidden">
