@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 
-// import "react-tooltip/dist/react-tooltip.css";
-// import { Tooltip as ReactTooltip } from "react-tooltip";
+import "react-tooltip/dist/react-tooltip.css";
+import { Tooltip as ReactTooltip } from "react-tooltip";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
 
@@ -54,7 +54,7 @@ const Navbar = () => {
 
             <li>
               <NavLink
-                to="/blog"
+                to="/AllToys"
                 aria-label="All Toys"
                 title="All Toys"
                 className={({ isActive }) => (isActive ? "active" : "default")}
@@ -66,7 +66,7 @@ const Navbar = () => {
               <>
                 <li>
                   <NavLink
-                    to="/blog"
+                    to="/MyToys"
                     aria-label="  My Toys"
                     title="  My Toys"
                     className={({ isActive }) =>
@@ -78,7 +78,7 @@ const Navbar = () => {
                 </li>
                 <li>
                   <NavLink
-                    to="/blog"
+                    to="/AddToys"
                     aria-label=" Add Toys"
                     title=" Add Toys"
                     className={({ isActive }) =>
@@ -104,12 +104,26 @@ const Navbar = () => {
 
           <div className="items-center hidden space-x-8 lg:flex text-lg font-bold">
             {user ? (
-              <button
-                onClick={handleLogout}
-                className="btn btn-outline btn-error"
-              >
-                Logout
-              </button>
+              <>
+                <img
+                  id="img"
+                  alt=""
+                  className="w-12 h-12 border rounded-full dark:bg-gray-500 dark:border-gray-700"
+                  src={user.photoURL}
+                />
+                <ReactTooltip
+                  anchorId="img"
+                  place="top"
+                  variant="info"
+                  content={user.displayName}
+                />
+                <button
+                  onClick={handleLogout}
+                  className="btn btn-outline btn-error"
+                >
+                  Logout
+                </button>
+              </>
             ) : (
               <>
                 {" "}

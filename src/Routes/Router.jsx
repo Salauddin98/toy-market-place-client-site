@@ -3,6 +3,10 @@ import App from "../App";
 import Home from "../shared/Home/Home/Home";
 import Login from "../Account/Login/Login";
 import SignUp from "../Account/Signup/Signup";
+import AllToys from "../Componets/AllToys/AllToys";
+import MyToys from "../Componets/MyToys/MyToys";
+import AddToys from "../Componets/AddToys/AddToys";
+import PrivateRoutes from "../Private/PrivateRoutes";
 
 const router = createBrowserRouter([
   {
@@ -10,6 +14,23 @@ const router = createBrowserRouter([
     element: <App></App>,
     children: [
       { path: "/", element: <Home></Home> },
+      { path: "/AllToys", element: <AllToys></AllToys> },
+      {
+        path: "/MyToys",
+        element: (
+          <PrivateRoutes>
+            <MyToys></MyToys>
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "/AddToys",
+        element: (
+          <PrivateRoutes>
+            <AddToys></AddToys>
+          </PrivateRoutes>
+        ),
+      },
       { path: "/login", element: <Login></Login> },
       { path: "/register", element: <SignUp></SignUp> },
     ],
