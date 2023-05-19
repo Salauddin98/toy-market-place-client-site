@@ -40,7 +40,7 @@ const Navbar = () => {
               Baby<span className="text-orange-400">Toys</span>
             </p>
           </Link>
-          <ul className="items-center hidden space-x-8 lg:flex text-xl font-bold">
+          <ul className="items-center hidden space-x-8 lg:flex text-base font-bold">
             <li>
               <NavLink
                 to="/"
