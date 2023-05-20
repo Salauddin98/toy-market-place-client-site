@@ -1,7 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigation } from "react-router-dom";
+import Loading from "../../Loading/Loading";
 
 const MyToysRow = ({ toys, handleDelete }) => {
   console.log(toys._id);
+  const { _id } = toys;
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return <Loading></Loading>;
+  }
   return (
     <tr>
       <td>{toys.sellerName}</td>
@@ -39,7 +45,7 @@ const MyToysRow = ({ toys, handleDelete }) => {
             <UpdateToys toys={toys} handleUpdate={handleUpdate}></UpdateToys>
           </div>
         </div> */}
-        <Link to={`updateToys/${toys._id}`}>
+        <Link to={`/updateToys/${_id}`}>
           <button className="btn btn-outline btn-primary">Update</button>
         </Link>
       </td>

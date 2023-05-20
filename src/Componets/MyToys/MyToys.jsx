@@ -7,6 +7,7 @@ import Loading from "../../Loading/Loading";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
+
   // console.log(user.email);
   const [myToys, setMyToys] = useState([]);
   const url = `http://localhost:5000/myToys?email=${user?.email}`;
@@ -18,6 +19,11 @@ const MyToys = () => {
         setMyToys(data);
       });
   }, [url]);
+
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return <Loading></Loading>;
+  }
 
   const handleDelete = (id) => {
     console.log(id);
@@ -46,10 +52,6 @@ const MyToys = () => {
       }
     });
   };
-  const navigation = useNavigation();
-  if (navigation.state === "loading") {
-    return <Loading></Loading>;
-  }
 
   return (
     <section>

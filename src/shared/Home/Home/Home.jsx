@@ -4,6 +4,7 @@ import Banner from "../Banner/Banner";
 import Gallery from "../Gallary/Gallery";
 import TrendingProduct from "../TrendingProduct/TrendingProduct";
 import Loading from "../../../Loading/Loading";
+import ToysCategory from "../ToysCategory/ToysCategory";
 
 const Home = () => {
   const navigation = useNavigation();
@@ -14,6 +15,7 @@ const Home = () => {
     <div>
       <Banner></Banner>
       <Gallery></Gallery>
+      <ToysCategory></ToysCategory>
       <About></About>
       <TrendingProduct></TrendingProduct>
     </div>
