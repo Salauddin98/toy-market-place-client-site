@@ -224,7 +224,7 @@ const Navbar = () => {
 
                       <li>
                         <NavLink
-                          to="/blog"
+                          to="/AllToys"
                           aria-label="All Toys"
                           title="All Toys"
                           className={({ isActive }) =>
@@ -236,7 +236,7 @@ const Navbar = () => {
                       </li>
                       <li>
                         <NavLink
-                          to="/blog"
+                          to="/myToys"
                           aria-label="  My Toys"
                           title="  My Toys"
                           className={({ isActive }) =>
@@ -248,7 +248,7 @@ const Navbar = () => {
                       </li>
                       <li>
                         <NavLink
-                          to="/blog"
+                          to="/addToys"
                           aria-label=" Add Toys"
                           title=" Add Toys"
                           className={({ isActive }) =>
@@ -272,14 +272,44 @@ const Navbar = () => {
                       </li>
 
                       <li>
-                        <div className="items-center  space-x-8 lg:flex text-lg font-bold">
-                          <button className="btn btn-outline btn-secondary">
-                            Login
-                          </button>
-                          <button className="btn btn-outline btn-primary">
-                            Signup
-                          </button>
-                        </div>
+                        {user ? (
+                          <>
+                            <img
+                              id="img"
+                              alt=""
+                              className="w-12 h-12 border rounded-full dark:bg-gray-500 dark:border-gray-700"
+                              src={user.photoURL}
+                            />
+                            <ReactTooltip
+                              anchorId="img"
+                              place="top"
+                              variant="info"
+                              content={user.displayName}
+                            />
+                            <button
+                              onClick={handleLogout}
+                              className="btn btn-outline btn-error mt-3 md:mt-0"
+                            >
+                              Logout
+                            </button>
+                          </>
+                        ) : (
+                          <>
+                            {" "}
+                            <Link to="/login">
+                              {" "}
+                              <button className="btn btn-outline btn-secondary mr-3 md:mr-0">
+                                Login
+                              </button>
+                            </Link>
+                            <Link to="/register">
+                              {" "}
+                              <button className="btn btn-outline btn-primary">
+                                Signup
+                              </button>
+                            </Link>
+                          </>
+                        )}
                       </li>
                     </ul>
                   </nav>
