@@ -1,6 +1,7 @@
-import UpdateToys from "./UpdateToys";
+import { Link } from "react-router-dom";
 
 const MyToysRow = ({ toys, handleDelete }) => {
+  console.log(toys._id);
   return (
     <tr>
       <td>{toys.sellerName}</td>
@@ -9,18 +10,15 @@ const MyToysRow = ({ toys, handleDelete }) => {
       <td>{toys.quantity}</td>
       <td>
         {/* The button to open modal */}
-        <label htmlFor="my-modal-5" className="btn">
+        {/* <label htmlFor="my-modal-5" className="btn">
           Update
-        </label>
+        </label> */}
 
         {/* Put this part before </body> tag */}
-        <input type="checkbox" id="my-modal-5" className="modal-toggle" />
-        <div className="modal">
+        {/* <input type="checkbox" id="my-modal-5" className="modal-toggle" /> */}
+        {/* <div className="modal">
           <div className="modal-box w-11/12 max-w-5xl">
             <div className="modal-action">
-              {/* <label htmlFor="my-modal-5" className="btn">
-                Ok
-              </label> */}
               <label
                 htmlFor="my-modal-5"
                 aria-label="Close Menu"
@@ -38,10 +36,12 @@ const MyToysRow = ({ toys, handleDelete }) => {
                 </svg>
               </label>
             </div>
-            <UpdateToys toys={toys}></UpdateToys>
+            <UpdateToys toys={toys} handleUpdate={handleUpdate}></UpdateToys>
           </div>
-        </div>
-        {/* <button className="btn btn-outline btn-primary">Update</button> */}
+        </div> */}
+        <Link to={`updateToys/${toys._id}`}>
+          <button className="btn btn-outline btn-primary">Update</button>
+        </Link>
       </td>
       <td>
         <button

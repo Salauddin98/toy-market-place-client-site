@@ -1,10 +1,36 @@
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { AuthContext } from "../../Providers/AuthProviders";
+import Swal from "sweetalert2";
+import { useLoaderData } from "react-router-dom";
 
-const UpdateToys = ({ toys }) => {
+const UpdateToys = () => {
   const { register, handleSubmit } = useForm();
+  const { user } = useContext(AuthContext);
+  const Toys = useLoaderData();
+  console.log(Toys);
 
   const onSubmit = (data) => {
     console.log(data);
+    fetch(`http://localhost:5000/myToys/${Toys._id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          Swal.fire({
+            title: "Success!",
+            text: "Coffee Updated Successfully",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
+        }
+      });
   };
   return (
     <div className="w-full mx-auto px-4 py-5 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-10 lg:px-8 ">
@@ -26,7 +52,7 @@ const UpdateToys = ({ toys }) => {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="name"
               type="text"
-              defaultValue={toys?.name}
+              defaultValue={Toys?.name}
               placeholder="Enter name"
               {...register("name", { required: true })}
             />
@@ -42,7 +68,7 @@ const UpdateToys = ({ toys }) => {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="picture-url"
               type="text"
-              defaultValue={toys?.pictureURL}
+              defaultValue={Toys?.pictureURL}
               placeholder="Enter picture URL"
               {...register("pictureURL", { required: true })}
             />
@@ -60,7 +86,7 @@ const UpdateToys = ({ toys }) => {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="seller-name"
               type="text"
-              defaultValue={toys?.displayName}
+              defaultValue={user?.displayName}
               placeholder="Enter seller name"
               {...register("sellerName", { required: true })}
             />
@@ -76,7 +102,7 @@ const UpdateToys = ({ toys }) => {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="seller-email"
               type="email"
-              defaultValue={toys?.email}
+              defaultValue={user?.email}
               placeholder="Enter seller email"
               {...register("sellerEmail", { required: true })}
             />
@@ -94,7 +120,7 @@ const UpdateToys = ({ toys }) => {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="sub-category"
               {...register("subCategory", { required: true })}
-              defaultValue={toys?.subCategory}
+              defaultValue={Toys?.subCategory}
             >
               <option value="">Select Toys Category</option>
               <option value="Math Toys">Math Toys</option>
@@ -113,7 +139,7 @@ const UpdateToys = ({ toys }) => {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="price"
               type="number"
-              defaultValue={toys?.quantity}
+              defaultValue={Toys?.quantity}
               placeholder="Enter price"
               {...register("price", { required: true })}
             />
@@ -134,7 +160,7 @@ const UpdateToys = ({ toys }) => {
               step="0.1"
               min="0"
               max="5"
-              defaultValue={toys?.rating}
+              defaultValue={Toys?.rating}
               placeholder="Enter rating"
               {...register("rating", { required: true })}
             />
@@ -150,7 +176,7 @@ const UpdateToys = ({ toys }) => {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="quantity"
               type="number"
-              defaultValue={toys?.quantity}
+              defaultValue={Toys?.quantity}
               placeholder="Enter available quantity"
               {...register("quantity", { required: true })}
             />
@@ -168,10 +194,11 @@ const UpdateToys = ({ toys }) => {
             id="description"
             rows="4"
             placeholder="Enter detail description"
-            defaultValue={toys?.description}
+            defaultValue={Toys?.description}
             {...register("description", { required: true })}
           ></textarea>
         </div>
+
         <div className="flex items-center justify-center">
           <button className="btn btn-outline btn-primary" type="submit">
             Submit
