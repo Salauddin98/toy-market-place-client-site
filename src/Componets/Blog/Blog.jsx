@@ -1,6 +1,14 @@
+import { useNavigation } from "react-router-dom";
 import image from "../../image/faq.png";
+import Loading from "../../Loading/Loading";
+import useTitle from "../../Hooks/useTitle";
 
 const Blog = () => {
+  useTitle("Blog");
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return <Loading></Loading>;
+  }
   return (
     <section className="container mx-auto px-10 mt-10 md:mt-32 lg:mt-16 mb-4">
       <div className="flex flex-col md:flex-row gap-10 justify-between items-center mt">
@@ -17,17 +25,24 @@ const Blog = () => {
             </div>
             <div className="collapse-content">
               <p>
-                The React Context API is a tool that allows you to share data
-                between components without having to pass the data through props
-                manually at every level of the component tree. The Context API
-                is especially useful when you have data that is used by many
-                components throughout your application.
+                An access token is a credential that is issued by an
+                authentication server upon successful authentication. It
+                represents the authorization granted to a user or an application
+                to access specific resources, APIs, or services. The access
+                token is usually a long string of characters that is included in
+                the header or body of API requests to prove the authenticity and
+                authorization of the requester. It typically has a limited
+                lifespan and expires after a certain period of time to enhance
+                security.
                 <br />
-                In general, you should consider using the Context API when you
-                have data that needs to be accessed by many components
-                throughout your application. However, keep in mind that
-                overusing the Context API can make your code harder to read and
-                maintain, so it's important to use it judiciously.
+                Access tokens are short-lived and meant to be used frequently.
+                It is recommended to store them in memory or a short-term
+                storage mechanism on the client-side. Options include storing
+                them in a JavaScript variable or using browser session storage.
+                Storing the access token securely and encrypted helps prevent
+                unauthorized access. Be cautious about storing access tokens in
+                browser cookies or local storage, as they may be susceptible to
+                cross-site scripting (XSS) attacks.
               </p>
             </div>
           </div>
@@ -40,18 +55,16 @@ const Blog = () => {
             </div>
             <div className="collapse-content">
               <p>
-                In React, a custom hook is a JavaScript function that starts
-                with the word "use" and uses React's built-in hooks (such as
-                useState or useEffect) to add some custom behavior to a
-                component. Custom hooks allow you to reuse stateful logic
-                between components and make your code more modular and easier to
-                maintain.
+                SQL: SQL databases follow a structured data model known as the
+                relational model. Data is organized into tables with predefined
+                schemas consisting of rows and columns. Relationships between
+                tables are established using primary and foreign keys.
                 <br />
-                Custom hooks can be used to encapsulate any reusable logic that
-                involves state or side effects, such as fetching data from an
-                API or managing a form's state. By creating custom hooks, you
-                can abstract away the implementation details and create a clean,
-                reusable API for your components to use.
+                NoSQL: NoSQL databases employ various data models, including
+                key-value, document, columnar, and graph. They provide
+                flexibility by allowing schema-less or dynamic schema
+                structures. Each NoSQL database type handles data differently
+                and is optimized for specific use cases.
               </p>
             </div>
           </div>
@@ -62,15 +75,24 @@ const Blog = () => {
             <div className="collapse-title text-xl font-medium">
               <h3>
                 What is express js?
-                <br /> What is Nest JS
+                <br /> What is Next JS?
               </h3>
             </div>
             <div className="collapse-content">
               <p>
-                useRef is a built-in hook in React that provides a way to create
-                a mutable reference to an element or a value that persists
-                across renders. It is similar to the ref attribute in class
-                components, but it can be used in functional components as well.
+                Express.js is a popular and widely used web application
+                framework for Node.js. It provides a simple and minimalistic
+                approach to building web applications and APIs. Express.js is
+                known for its flexibility, robustness, and ease of use, making
+                it a popular choice among developers.
+              </p>
+              <br />
+              <p>
+                Next.js is a popular open-source framework for building
+                server-rendered React applications. It is built on top of React
+                and Node.js, providing a powerful toolset for developing modern
+                web applications with server-side rendering (SSR), static site
+                generation (SSG), and other advanced features.
               </p>
             </div>
           </div>
@@ -83,11 +105,24 @@ const Blog = () => {
             </div>
             <div className="collapse-content">
               <p>
-                useMemo is a built-in hook in React that is used to memoize
-                expensive computations so that they are only recalculated when
-                their dependencies change. It allows you to optimize the
-                performance of your application by avoiding unnecessary
-                re-renders.
+                In MongoDB, the aggregate method is a powerful feature that
+                allows for advanced data aggregation and analysis operations. It
+                provides a flexible and efficient way to process and transform
+                data within a collection. The aggregate method takes an array of
+                stages as input, where each stage represents a specific
+                operation or transformation to be applied to the data.
+              </p>
+              <br />
+              <p>
+                The aggregate method in MongoDB provides a powerful and flexible
+                approach to perform complex data analysis, transformations, and
+                aggregations within a collection. It allows for the combination
+                of multiple operations in a single query and provides efficient
+                processing capabilities for large datasets. By leveraging the
+                aggregate method, developers can perform advanced computations,
+                data manipulations, and aggregations directly within the
+                database, reducing the need for extensive post-processing on the
+                application side.
               </p>
             </div>
           </div>

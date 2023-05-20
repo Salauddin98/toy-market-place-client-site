@@ -10,8 +10,10 @@ import { AuthContext } from "../../Providers/AuthProviders";
 import { toast } from "react-hot-toast";
 import Loading from "../../Loading/Loading";
 import loginGif from "../../image/login.gif";
+import useTitle from "../../Hooks/useTitle";
 
 const Login = () => {
+  useTitle("Login");
   const [PasswordShow, setPasswordShow] = useState(true);
   const { googleSignIn, setUser, userLogin } = useContext(AuthContext);
   const [error, setError] = useState("");

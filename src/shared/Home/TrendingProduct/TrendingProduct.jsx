@@ -15,7 +15,10 @@ const TrendingProduct = () => {
         OUR TRENDING PRODUCTS
         <hr className="w-28 mt-2 border-[3px] mx-auto border-orange-500" />
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-10 lg:px-8 gap-10">
+      <div
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-10 lg:px-8 gap-10"
+        data-aos="zoom-in"
+      >
         <div className="card card-compact w-96 bg-base-100 shadow-xl">
           <figure>
             <img src={science2} alt="Shoes" />

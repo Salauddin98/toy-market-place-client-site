@@ -2,13 +2,18 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Providers/AuthProviders";
 import Swal from "sweetalert2";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
+import Loading from "../../Loading/Loading";
 
 const UpdateToys = () => {
   const { register, handleSubmit } = useForm();
   const { user } = useContext(AuthContext);
   const Toys = useLoaderData();
-  console.log(Toys);
+  // console.log(Toys);
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return <Loading></Loading>;
+  }
 
   const onSubmit = (data) => {
     console.log(data);

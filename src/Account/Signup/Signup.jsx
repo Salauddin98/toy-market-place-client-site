@@ -5,7 +5,9 @@ import { AuthContext } from "../../Providers/AuthProviders";
 import { toast } from "react-hot-toast";
 import Loading from "../../Loading/Loading";
 import loginGif from "../../image/login.gif";
+import useTitle from "../../Hooks/useTitle";
 const SignUp = () => {
+  useTitle("SignUP");
   const [PasswordShow, setPasswordShow] = useState(true);
   const { createUser, GetProfile } = useContext(AuthContext);
   const [email, setEmail] = useState("");

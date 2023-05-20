@@ -4,8 +4,10 @@ import MyToysRow from "./MyToysRow";
 import Swal from "sweetalert2";
 import { useNavigation } from "react-router-dom";
 import Loading from "../../Loading/Loading";
+import useTitle from "../../Hooks/useTitle";
 
 const MyToys = () => {
+  useTitle("MyToys");
   const { user } = useContext(AuthContext);
 
   // console.log(user.email);

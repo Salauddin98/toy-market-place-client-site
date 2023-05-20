@@ -5,8 +5,10 @@ import Gallery from "../Gallary/Gallery";
 import TrendingProduct from "../TrendingProduct/TrendingProduct";
 import Loading from "../../../Loading/Loading";
 import ToysCategory from "../ToysCategory/ToysCategory";
+import useTitle from "../../../Hooks/useTitle";
 
 const Home = () => {
+  useTitle("Home");
   const navigation = useNavigation();
   if (navigation.state === "loading") {
     return <Loading></Loading>;

@@ -2,8 +2,10 @@ import { useLoaderData, useNavigation } from "react-router-dom";
 import AllToysRow from "./AllToysRow";
 import Loading from "../../Loading/Loading";
 import { useState } from "react";
+import useTitle from "../../Hooks/useTitle";
 
 const AllToys = () => {
+  useTitle("AllToys");
   const allToys = useLoaderData();
   const [allToy, setAllToy] = useState(allToys);
   const [searchItems, setSearchItems] = useState("");

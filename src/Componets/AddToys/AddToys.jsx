@@ -2,10 +2,18 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Providers/AuthProviders";
 import { toast } from "react-hot-toast";
+import { useNavigation } from "react-router-dom";
+import Loading from "../../Loading/Loading";
+import useTitle from "../../Hooks/useTitle";
 
 const AddToys = () => {
+  useTitle("AddToys");
   const { register, handleSubmit } = useForm();
   const { user } = useContext(AuthContext);
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return <Loading></Loading>;
+  }
 
   const onSubmit = (data) => {
     console.log(data);

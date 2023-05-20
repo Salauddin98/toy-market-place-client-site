@@ -8,7 +8,7 @@ const About = () => {
           ABOUT US
           <hr className="w-20 mt-2 border-[3px] mx-auto border-orange-500" />
         </h1>
-        <div className="hero-content flex-col lg:flex-row">
+        <div className="hero-content flex-col lg:flex-row" data-aos="zoom-in">
           <div className="lg:w-1/2 relative">
             <img src={person} className="w-3/4 rounded-lg shadow-2xl" />
             <img
