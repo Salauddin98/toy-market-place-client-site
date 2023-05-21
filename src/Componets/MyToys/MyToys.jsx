@@ -69,7 +69,7 @@ const MyToys = () => {
 
   return (
     <section>
-      <div className="btn-group flex justify-center mt-6">
+      <div className="btn-group flex justify-center mt-6 mb-6">
         <button
           onClick={() => setSort(-1)}
           className="btn btn-outline btn-primary bg-white"
@@ -83,7 +83,7 @@ const MyToys = () => {
           Low Price
         </button>
       </div>
-      <div className="overflow-x-auto px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-10 lg:px-8">
+      <div className="overflow-x-auto max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <table className="table table-compact w-full">
           {/* head */}
           <thead>

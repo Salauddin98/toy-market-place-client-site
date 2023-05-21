@@ -10,8 +10,8 @@ const Blog = () => {
     return <Loading></Loading>;
   }
   return (
-    <section className="container mx-auto px-10 mt-10 md:mt-32 lg:mt-16 mb-4">
-      <div className="flex flex-col md:flex-row gap-10 justify-between items-center mt">
+    <section className="max-w-7xl mx-auto px-2 md:px-6 lg:px-8 py-6">
+      <div className="flex flex-col md:flex-row gap-10 justify-between items-center mt mb-10">
         <div className="flex flex-col gap-6  lg:px-0 w-full lg:w-[50%] mx-auto">
           <div
             tabIndex={0}

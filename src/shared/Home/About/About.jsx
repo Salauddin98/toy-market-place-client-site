@@ -3,7 +3,7 @@ import person2 from "../../../image/banner1.jpg";
 const About = () => {
   return (
     <section className="mt-6">
-      <div className="container mx-auto">
+      <div className="max-w-7xl mx-auto px-2 md:px-6 lg:px-8">
         <h1 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold py-8">
           ABOUT US
           <hr className="w-20 mt-2 border-[3px] mx-auto border-orange-500" />

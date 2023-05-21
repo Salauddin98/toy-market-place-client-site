@@ -72,7 +72,7 @@ const Login = () => {
   };
 
   return (
-    <section className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-10 lg:px-8 gap-10 flex flex-col items-center justify-center">
+    <section className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-6 gap-10 flex flex-col items-center justify-center">
       <div className="flex flex-col md:flex-row-reverse gap-10">
         <div className="">
           <img src={loginGif} alt="" />

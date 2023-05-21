@@ -31,7 +31,7 @@ const AddToys = () => {
 
   return (
     <section className="">
-      <div className="w-full mx-auto px-4 py-5 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-10 lg:px-8 ">
+      <div className="w-full mx-auto max-w-7xl px-4 py-6 md:px-6 lg:px-8 ">
         <form
           className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
           onSubmit={handleSubmit(onSubmit)}

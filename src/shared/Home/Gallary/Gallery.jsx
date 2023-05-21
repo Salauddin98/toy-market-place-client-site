@@ -16,7 +16,7 @@ const Gallery = () => {
         <hr className="w-28 mt-2 border-[3px] mx-auto border-orange-500" />
       </h1>
       <div
-        className="py-6 dark:bg-gray-800 dark:text-gray-50"
+        className="max-w-7xl mx-auto px-2 md:px-6 lg:px-8 dark:bg-gray-800 dark:text-gray-50"
         data-aos="zoom-in"
       >
         <div className="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">

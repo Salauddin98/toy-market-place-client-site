@@ -42,8 +42,8 @@ const AllToys = () => {
   // }, [activeTab]);
 
   return (
-    <section className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-10 lg:px-8">
-      <div className="space-x-2 mb-4">
+    <section className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div className="space-x-2 mb-4 mt-4">
         <input
           type="text"
           placeholder="Search here"
