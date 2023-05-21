@@ -207,7 +207,7 @@ const Navbar = () => {
                       </button>
                     </div>
                   </div>
-                  <nav>
+                  <nav className="z-30">
                     <ul className="space-y-4">
                       <li>
                         <NavLink
@@ -234,30 +234,34 @@ const Navbar = () => {
                           All Toys
                         </NavLink>
                       </li>
-                      <li>
-                        <NavLink
-                          to="/myToys"
-                          aria-label="  My Toys"
-                          title="  My Toys"
-                          className={({ isActive }) =>
-                            isActive ? "active" : "default"
-                          }
-                        >
-                          My Toys
-                        </NavLink>
-                      </li>
-                      <li>
-                        <NavLink
-                          to="/addToys"
-                          aria-label=" Add Toys"
-                          title=" Add Toys"
-                          className={({ isActive }) =>
-                            isActive ? "active" : "default"
-                          }
-                        >
-                          Add Toys
-                        </NavLink>
-                      </li>
+                      {user && (
+                        <>
+                          <li>
+                            <NavLink
+                              to="/myToys"
+                              aria-label="  My Toys"
+                              title="  My Toys"
+                              className={({ isActive }) =>
+                                isActive ? "active" : "default"
+                              }
+                            >
+                              My Toys
+                            </NavLink>
+                          </li>
+                          <li>
+                            <NavLink
+                              to="/AddToys"
+                              aria-label=" Add Toys"
+                              title=" Add Toys"
+                              className={({ isActive }) =>
+                                isActive ? "active" : "default"
+                              }
+                            >
+                              Add Toys
+                            </NavLink>
+                          </li>
+                        </>
+                      )}
                       <li>
                         <NavLink
                           to="/blog"

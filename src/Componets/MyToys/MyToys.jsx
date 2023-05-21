@@ -62,6 +62,7 @@ const MyToys = () => {
           {/* head */}
           <thead>
             <tr>
+              <th>Number</th>
               <th>Seller Name</th>
               <th>Toy Name</th>
               <th>Toy Category</th>
@@ -71,11 +72,12 @@ const MyToys = () => {
             </tr>
           </thead>
           <tbody>
-            {myToys.map((toys) => (
+            {myToys.map((toys, index) => (
               <MyToysRow
                 handleDelete={handleDelete}
                 toys={toys}
                 key={toys._id}
+                index={index}
               ></MyToysRow>
             ))}
           </tbody>

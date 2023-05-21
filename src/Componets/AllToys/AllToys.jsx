@@ -9,6 +9,7 @@ const AllToys = () => {
   const allToys = useLoaderData();
   const [allToy, setAllToy] = useState(allToys);
   const [searchItems, setSearchItems] = useState("");
+  const [showAll, setShowAll] = useState(false);
 
   const navigation = useNavigation();
   if (navigation.state === "loading") {
@@ -25,6 +26,17 @@ const AllToys = () => {
         setAllToy(data);
       });
   };
+
+  // another method for search emplement------>
+  // useEffect(() => {
+  //   fetch("http://localhost:5000/allJobs")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       const filterResult = data?.filter((res) => res.status === activeTab);
+  //       setJob(filterResult);
+  //       // console.log(data);
+  //     });
+  // }, [activeTab]);
 
   return (
     <section>
@@ -58,7 +70,7 @@ const AllToys = () => {
               <td>Cy Ganderton</td>
               <td>Quality Control Specialist</td>
               <td>Blue</td> */}
-            {allToy.map((toys) => (
+            {allToy.slice(0, showAll ? 20 : 10).map((toys) => (
               <AllToysRow toys={toys} key={toys._id}></AllToysRow>
             ))}
           </tbody>

@@ -1,7 +1,7 @@
 import { Link, useNavigation } from "react-router-dom";
 import Loading from "../../Loading/Loading";
 
-const MyToysRow = ({ toys, handleDelete }) => {
+const MyToysRow = ({ toys, handleDelete, index }) => {
   console.log(toys._id);
   const { _id } = toys;
   const navigation = useNavigation();
@@ -10,6 +10,7 @@ const MyToysRow = ({ toys, handleDelete }) => {
   }
   return (
     <tr>
+      <td>{index + 1}</td>
       <td>{toys.sellerName}</td>
       <td>{toys.name}</td>
       <td>{toys.subCategory}</td>
