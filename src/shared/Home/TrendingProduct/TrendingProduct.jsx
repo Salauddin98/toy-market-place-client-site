@@ -10,7 +10,7 @@ import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
 const TrendingProduct = () => {
   return (
-    <section className="bg-[url('image/pattern-home.jpg')] bg-no-repeat mt-28">
+    <section className="bg-[url('image/pattern-home.jpg')] bg-no-repeat mt-20 mb-10">
       <h1 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold py-8">
         OUR TRENDING PRODUCTS
         <hr className="w-28 mt-2 border-[3px] mx-auto border-orange-500" />

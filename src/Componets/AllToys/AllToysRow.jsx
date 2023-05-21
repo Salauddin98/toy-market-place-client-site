@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
 import { toast } from "react-hot-toast";
 
-const AllToysRow = ({ toys }) => {
+const AllToysRow = ({ toys, index }) => {
   const { user } = useContext(AuthContext);
   const handleCheck = () => {
     if (!user) {
@@ -12,6 +12,7 @@ const AllToysRow = ({ toys }) => {
   };
   return (
     <tr>
+      <td>{index + 1}</td>
       <td>{toys.sellerName}</td>
       <td>{toys.name}</td>
       <td>{toys.subCategory}</td>

@@ -39,23 +39,24 @@ const AllToys = () => {
   // }, [activeTab]);
 
   return (
-    <section>
-      <div className="overflow-x-auto px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-10 lg:px-8">
-        <div className="space-x-2 mb-4">
-          <input
-            type="text"
-            placeholder="Search here"
-            className="input input-bordered w-full max-w-xs"
-            onChange={(e) => setSearchItems(e.target.value)}
-          />
-          <button onClick={handleSearch} className="btn btn-active">
-            Search
-          </button>
-        </div>
-        <table className="table table-zebra w-full">
+    <section className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-10 lg:px-8">
+      <div className="space-x-2 mb-4">
+        <input
+          type="text"
+          placeholder="Search here"
+          className="input input-bordered w-full max-w-xs"
+          onChange={(e) => setSearchItems(e.target.value)}
+        />
+        <button onClick={handleSearch} className="btn btn-active mt-2">
+          Search
+        </button>
+      </div>
+      <div className="overflow-x-auto">
+        <table className="table table-compact w-full">
           {/* head */}
           <thead>
             <tr>
+              <th>No.</th>
               <th>Seller Name</th>
               <th>Toy Name</th>
               <th>Toy Category</th>
@@ -70,11 +71,21 @@ const AllToys = () => {
               <td>Cy Ganderton</td>
               <td>Quality Control Specialist</td>
               <td>Blue</td> */}
-            {allToy.slice(0, showAll ? 20 : 10).map((toys) => (
-              <AllToysRow toys={toys} key={toys._id}></AllToysRow>
+            {allToy.slice(0, showAll ? allToy.length : 6).map((toys, index) => (
+              <AllToysRow index={index} toys={toys} key={toys._id}></AllToysRow>
             ))}
           </tbody>
         </table>
+      </div>
+      <div className="text-center mb-4">
+        {!showAll && (
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="btn btn-outline btn-secondary mt-6 "
+          >
+            See More
+          </button>
+        )}
       </div>
     </section>
   );

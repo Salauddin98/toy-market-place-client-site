@@ -20,12 +20,21 @@ const ToysCategory = () => {
         setToys(data);
       });
   }, [category]);
+  // useEffect(() => {
+  //   fetch("http://localhost:5000/allJobs")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       const filterResult = data?.filter((res) => res.status === activeTab);
+  //       setJob(filterResult);
+  //       // console.log(data);
+  //     });
+  // }, [activeTab]);
 
   const handleCategory = (event) => {
     setCategory(event);
   };
   return (
-    <section className="bg-[url('image/pattern-home.jpg')] bg-no-repeat mt-10">
+    <section className="bg-[url('image/pattern-home.jpg')] bg-no-repeat mt-0">
       <h1 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold py-8">
         OUR TOYS CATEGORY
         <hr className="w-28 mt-2 border-[3px] mx-auto border-orange-500" />

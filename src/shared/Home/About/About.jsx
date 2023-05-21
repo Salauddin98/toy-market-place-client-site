@@ -2,7 +2,7 @@ import person from "../../../image/banner3.jpg";
 import person2 from "../../../image/banner1.jpg";
 const About = () => {
   return (
-    <section className="mt-10">
+    <section className="mt-6">
       <div className="container mx-auto">
         <h1 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold py-8">
           ABOUT US

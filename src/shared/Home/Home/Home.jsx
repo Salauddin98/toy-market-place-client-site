@@ -6,6 +6,7 @@ import TrendingProduct from "../TrendingProduct/TrendingProduct";
 import Loading from "../../../Loading/Loading";
 import ToysCategory from "../ToysCategory/ToysCategory";
 import useTitle from "../../../Hooks/useTitle";
+import Team from "../Team/Team";
 
 const Home = () => {
   useTitle("Home");
@@ -20,6 +21,7 @@ const Home = () => {
       <ToysCategory></ToysCategory>
       <About></About>
       <TrendingProduct></TrendingProduct>
+      <Team></Team>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import { FaAddressCard, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
+import logo from "../../assets/logo.png";
 
 const Footer = () => {
   return (
@@ -9,13 +10,17 @@ const Footer = () => {
             <a
               rel="noopener noreferrer"
               href="#"
-              className="flex  space-x-3 lg:justify-start"
+              className="flex items-center  space-x-3 lg:justify-start"
             >
               {/* <div className="flex items-center justify-center w-12 h-12 rounded-full dark:bg-violet-400 text-4xl">
               <img src={logo} alt="" className="text-4xl" />
             </div> */}
-              <p className="text-4xl font-bold text-gray-300">
-                Baby<span className="text-orange-500">Toys</span>
+              <div className=" w-12 h-12 rounded-full bg-cyan-200">
+                {" "}
+                <img src={logo} alt="" />
+              </div>
+              <p className="text-3xl font-bold text-gray-300">
+                LearnPlay<span className="text-orange-500">Toys</span>
               </p>
             </a>
             <p className="w-full md:w-3/5 lg:w-9/12 text-gray-400 mt-3">
