@@ -45,7 +45,7 @@ const ToysCategory = () => {
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-10 lg:px-8">
         <div className="text-center mb-10">
           <Tabs>
-            <div className="md:text-lg font-bold bg-[#ff6799] text-white rounded-md ">
+            <div className="sm:text-base md:text-lg font-bold bg-[#ff6799] text-white rounded-md ">
               <TabList>
                 <Tab onClick={() => handleCategory("Math Toys")}>Math Toys</Tab>
                 <Tab onClick={() => handleCategory("Engineering Toys")}>
