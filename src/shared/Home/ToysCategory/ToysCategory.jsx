@@ -7,13 +7,15 @@ const ToysCategory = () => {
   const [toys, setToys] = useState([]);
   const [category, setCategory] = useState("Math Toys");
   useEffect(() => {
-    fetch("http://localhost:5000/allToys")
+    fetch("https://toys-server-site-salauddin98.vercel.app/allToys")
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/ToysCategory/${category}`)
+    fetch(
+      `https://toys-server-site-salauddin98.vercel.app/ToysCategory/${category}`
+    )
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
@@ -21,7 +23,7 @@ const ToysCategory = () => {
       });
   }, [category]);
   // useEffect(() => {
-  //   fetch("http://localhost:5000/allJobs")
+  //   fetch("https://toys-server-site-salauddin98.vercel.app/allJobs")
   //     .then((res) => res.json())
   //     .then((data) => {
   //       const filterResult = data?.filter((res) => res.status === activeTab);

@@ -22,7 +22,8 @@ const router = createBrowserRouter([
       {
         path: "/allToys",
         element: <AllToys></AllToys>,
-        loader: () => fetch("http://localhost:5000/allToys"),
+        loader: () =>
+          fetch("https://toys-server-site-salauddin98.vercel.app/allToys"),
       },
       {
         path: "/myToys",
@@ -48,7 +49,9 @@ const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/myToys/${params._id}`),
+          fetch(
+            `https://toys-server-site-salauddin98.vercel.app/myToys/${params._id}`
+          ),
       },
       {
         path: "/viewDetails/:id",
@@ -59,8 +62,10 @@ const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/allToys/${params.id}`),
-        // fetch(`http://localhost:5000/viewToys/${params.id}`),
+          fetch(
+            `https://toys-server-site-salauddin98.vercel.app/allToys/${params.id}`
+          ),
+        // fetch(`https://toys-server-site-salauddin98.vercel.app/viewToys/${params.id}`),
       },
 
       { path: "/blog", element: <Blog></Blog> },

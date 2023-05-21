@@ -16,10 +16,13 @@ const AllToys = () => {
     return <Loading></Loading>;
   }
   const handleSearch = () => {
-    fetch(`http://localhost:5000/getToysByText/${searchItems}`, {
-      method: "GET",
-      headers: { "content-type": "application/json" },
-    })
+    fetch(
+      `https://toys-server-site-salauddin98.vercel.app/getToysByText/${searchItems}`,
+      {
+        method: "GET",
+        headers: { "content-type": "application/json" },
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
@@ -29,7 +32,7 @@ const AllToys = () => {
 
   // another method for search emplement------>
   // useEffect(() => {
-  //   fetch("http://localhost:5000/allJobs")
+  //   fetch("https://toys-server-site-salauddin98.vercel.app/allJobs")
   //     .then((res) => res.json())
   //     .then((data) => {
   //       const filterResult = data?.filter((res) => res.status === activeTab);

@@ -19,7 +19,7 @@ const TrendingProduct = () => {
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-10 lg:px-8 gap-10"
         data-aos="zoom-in"
       >
-        <div className="card card-compact w-96 bg-base-100 shadow-xl">
+        <div className="card card-compact w-full bg-base-100 shadow-xl">
           <figure>
             <img src={science2} alt="Shoes" />
           </figure>
@@ -42,7 +42,7 @@ const TrendingProduct = () => {
             </div>
           </div>
         </div>
-        <div className="card card-compact w-96 bg-base-100 shadow-xl">
+        <div className="card card-compact w-full bg-base-100 shadow-xl">
           <figure>
             <img src={science3} alt="Shoes" />
           </figure>
@@ -65,7 +65,7 @@ const TrendingProduct = () => {
             </div>
           </div>
         </div>
-        <div className="card card-compact w-96 bg-base-100 shadow-xl">
+        <div className="card card-compact w-full bg-base-100 shadow-xl">
           <figure>
             <img src={science4} alt="Shoes" />
           </figure>
@@ -86,7 +86,7 @@ const TrendingProduct = () => {
             </div>
           </div>
         </div>
-        <div className="card card-compact w-96 bg-base-100 shadow-xl">
+        <div className="card card-compact w-full bg-base-100 shadow-xl">
           <figure>
             <img src={math1} alt="Shoes" />
           </figure>
@@ -107,7 +107,7 @@ const TrendingProduct = () => {
             </div>
           </div>
         </div>
-        <div className="card card-compact w-96 bg-base-100 shadow-xl">
+        <div className="card card-compact w-full bg-base-100 shadow-xl">
           <figure>
             <img src={math2} alt="Shoes" />
           </figure>
@@ -129,7 +129,7 @@ const TrendingProduct = () => {
           </div>
         </div>
 
-        <div className="card card-compact w-96 bg-base-100 shadow-xl">
+        <div className="card card-compact w-full bg-base-100 shadow-xl">
           <figure>
             <img src={math4} alt="Shoes" />
           </figure>

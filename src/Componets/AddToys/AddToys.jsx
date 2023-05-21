@@ -17,7 +17,7 @@ const AddToys = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    fetch("http://localhost:5000/addToys", {
+    fetch("https://toys-server-site-salauddin98.vercel.app/addToys", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

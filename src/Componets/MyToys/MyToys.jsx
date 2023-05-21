@@ -14,7 +14,7 @@ const MyToys = () => {
 
   // console.log(user.email);
   const [myToys, setMyToys] = useState([]);
-  // const url = `http://localhost:5000/myToys?email=${user?.email}`;
+  // const url = `https://toys-server-site-salauddin98.vercel.app/myToys?email=${user?.email}`;
   // useEffect(() => {
   //   fetch(url)
   //     .then((res) => res.json())
@@ -25,7 +25,9 @@ const MyToys = () => {
   // }, [url]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myToys?email=${user.email}&num=${sort}`)
+    fetch(
+      `https://toys-server-site-salauddin98.vercel.app/myToys?email=${user.email}&num=${sort}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setMyToys(data);
@@ -49,7 +51,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/myJobs/${id}`, {
+        fetch(`https://toys-server-site-salauddin98.vercel.app/myJobs/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
