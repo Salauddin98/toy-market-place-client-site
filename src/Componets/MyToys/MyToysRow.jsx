@@ -15,6 +15,7 @@ const MyToysRow = ({ toys, handleDelete, index }) => {
       <td>{toys.name}</td>
       <td>{toys.subCategory}</td>
       <td>{toys.quantity}</td>
+      <td>${toys.price}</td>
       <td>
         {/* The button to open modal */}
         {/* <label htmlFor="my-modal-5" className="btn">

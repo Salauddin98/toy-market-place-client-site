@@ -9,6 +9,7 @@ import useTitle from "../../Hooks/useTitle";
 const AddToys = () => {
   useTitle("AddToys");
   const { register, handleSubmit } = useForm();
+
   const { user } = useContext(AuthContext);
   const navigation = useNavigation();
   if (navigation.state === "loading") {
@@ -17,6 +18,7 @@ const AddToys = () => {
 
   const onSubmit = (data) => {
     console.log(data);
+
     fetch("https://toys-server-site-salauddin98.vercel.app/addToys", {
       method: "POST",
       headers: { "content-type": "application/json" },

@@ -2,10 +2,11 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Providers/AuthProviders";
 import Swal from "sweetalert2";
-import { useLoaderData, useNavigation } from "react-router-dom";
+import { useLoaderData, useNavigate, useNavigation } from "react-router-dom";
 import Loading from "../../Loading/Loading";
 
 const UpdateToys = () => {
+  const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
   const { user } = useContext(AuthContext);
   const Toys = useLoaderData();
@@ -38,6 +39,7 @@ const UpdateToys = () => {
             confirmButtonText: "Cool",
           });
         }
+        navigate("/myToys");
       });
   };
   return (

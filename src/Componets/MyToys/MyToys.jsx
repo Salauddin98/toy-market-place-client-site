@@ -26,7 +26,7 @@ const MyToys = () => {
 
   useEffect(() => {
     fetch(
-      `https://toys-server-site-salauddin98.vercel.app/myToys?email=${user.email}&num=${sort}`
+      `https://toys-server-site-salauddin98.vercel.app/myToys?email=${user?.email}&num=${sort}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -92,7 +92,7 @@ const MyToys = () => {
               <th>Seller Name</th>
               <th>Toy Name</th>
               <th>Toy Category</th>
-              <th>Available Quantity</th>
+              <th>Quantity</th>
               <th>Price</th>
               <th>Update</th>
               <th>Delete</th>
